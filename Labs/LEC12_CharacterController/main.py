@@ -12,17 +12,20 @@ def handle_events():
             running = False
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
+        else:
+            boy.handle_event(event)
 
 
 def reset_world():
-    global world
+    global world, boy
 
     world = []
 
     grass = Grass()
     world.append(grass)
 
-    world.append(Boy())
+    boy = Boy()
+    world.append(boy)
 
 
 def update_world():
