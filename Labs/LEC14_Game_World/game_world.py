@@ -14,7 +14,7 @@ def remove_object(o):
 #게임 로직
 def update():
     for layer in world:
-        for o in layer:
+        for o in layer[:]:
             o.update()  #객체들의 update() 호출
 
 #게임 월드 렌더링
