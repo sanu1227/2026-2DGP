@@ -47,6 +47,7 @@ def finish():
 
 def update():
     game_world.update()
+  
 
 def render():
     clear_canvas()
