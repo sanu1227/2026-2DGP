@@ -128,6 +128,9 @@ class Boy:
             auto_transitions=False,
         )
 
+    def get_bb(self):
+        return self.x - 25, self.y - 50, self.x + 25, self.y + 50
+
     def on_enter_IDLE(self):
         self.states['IDLE'].enter(self)
 
@@ -181,4 +184,5 @@ class Boy:
 
     def draw(self):
         self.states[self.state].draw(self)
+        draw_rectangle(*self.get_bb())
         self.font.draw(self.x - 10, self.y + 50, f'{self.ball_count:02d}', (255, 255, 0))
